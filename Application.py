@@ -1,6 +1,8 @@
 # __Author__ __Lencof__
+# Application.py
 
 from tkinter import *
+import os
 
 def add(a,b):
     return a + b
@@ -66,13 +68,13 @@ operations = {'ADD':add , 'ADDITION':add , 'SUM':add , 'PLUS':add ,
 
 win = Tk()
 win.geometry('1200x600')
-win.title('Lencof')
-win.configure(bg='orange')
+win.title('Vaben')
+win.configure(bg='#F781F3')
 
-l1 = Label(win , text='HI',width=20 , padx=3)
+l1 = Label(win , text='I am a Program',width=130 , padx=9)
 l1.place(x=150,y=10)
-l2 = Label(win , text='My name is Lencof' , padx=3)
-l2.place(x=180,y=40)
+l2 = Label(win , text='My name is Vaben' , padx=9)
+l2.place(x=200,y=60)
 l3 = Label(win , text='What can i help you' , padx=3)
 l3.place(x=176,y=130)
 
@@ -80,10 +82,37 @@ textin = StringVar()
 e1 = Entry(win , width=30 , textvariable = textin)
 e1.place(x=100,y=160)
 
-b1 = Button(win , text='Just this' ,command=calculate)
+b1 = Button(win , text='I do not know' ,command=calculate)
 b1.place(x=210,y=200)
 
 list = Listbox(win,width=20,height=3)
 list.place(x=150,y=230)
 
 win.mainloop()
+
+
+README = '''\
+Good
+'''
+
+# Open for 'w'riting
+f = open('README.txt', 'w')
+# Write text to file
+f.write(README)
+# Close the file
+f.close()
+
+# If no mode is specified,
+# 'r'ead mode is assumed by default
+f = open('README.txt')
+while True: # use True
+    line = f.readline()
+    # Zero length indicates EOF
+    if len(line) == 0:
+        break
+    # The `line` already has a newline
+    # at the end of each line
+    # since it is reading from a file.
+    print(line, end='')
+# close the file
+f.close()
